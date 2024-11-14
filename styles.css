@@ -482,6 +482,28 @@ body {
     line-height: 1.3;
 }
 
+@media (max-width: 980px) {
+    .profil-content {
+        flex-direction: column;
+    }
+
+    .profil-card, .profil-text {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    /* Atur urutan agar h2 muncul di bawah gambar */
+    .profil-image {
+        order: -1; /* Memastikan gambar tetap di atas */
+    }
+
+    .profil-section h2 {
+        order: 1; /* Menempatkan h2 di bawah gambar */
+        margin-top: 20px; /* Tambahkan jarak antara gambar dan teks */
+    }
+}
+
+
 @media (max-width: 768px) {
     .profil-content {
         flex-direction: column;
@@ -492,12 +514,14 @@ body {
         flex: 1 1 100%;
     }
 
-    .profil-text {
-        max-width: 100%;
+    /* Atur urutan agar h2 muncul di bawah gambar */
+    .profil-image {
+        order: -1; /* Memastikan gambar tetap di atas */
     }
 
-    .profil-text p {
-        padding: 0; /* Remove side padding for mobile */
+    .profil-section h2 {
+        order: 1; /* Menempatkan h2 di bawah gambar */
+        margin-top: 20px; /* Tambahkan sedikit jarak di atas h2 */
     }
 }
 
@@ -512,10 +536,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 10px; /* gap antara card */
-    margin-left: 10px; /* mengkompensasi margin card */
-    margin-right: 10px; /* mengkompensasi margin card */
-    margin-top: 50px; /* Menambahkan margin atas */
+    gap: 20px; /* gap antara card */
+    margin: 50px 10px 0;
 }
 
 .produk-card {
@@ -625,18 +647,41 @@ body {
         width: calc(33.33% - 20px); /* mengatur ulang lebar card */
     }
 }
+@media (max-width: 980px) {
+    .produk-grid {
+        flex-direction: row; /* atau column jika kamu ingin produk tampil berbaris */
+    }
+
+    .button-container {
+        display: flex; /* Mengaktifkan tampilan tombol */
+        flex-direction: column; /* Mengatur tombol dalam satu kolom */
+        align-items: center; /* Menyusun tombol di tengah */
+        margin-top: 20px; /* Jarak antara grid produk dan tombol */
+        width: 100%; /* Lebar penuh di bawah grid */
+    }
+
+    .button-container button {
+        width: 18%; /* Sesuaikan lebar tombol */
+        margin-bottom: 10px; /* Jarak antar tombol */
+    }
+}
+
 
 @media (max-width: 768px) {
     .produk-card {
+      
         width: calc(50% - 20px); /* mengatur ulang lebar card */
     }
 }
 
 @media (max-width: 480px) {
     .produk-card {
-        width: calc(100% - 20px); /* mengatur ulang lebar card */
+        margin-left: 10px; /*mengatur margin agak sedikit ke kiri*/
+        width: calc(100% - 15px); /* mengatur ulang lebar card */
     }
 }
+
+
 
 
 
@@ -661,11 +706,11 @@ body {
     color: #483c32;
     font-size: 20px;
     text-align: start;  
-    margin-bottom: 10px; 
+    margin-bottom: 7px; 
 }
 .popup p{
     color: #483c32;
-    padding-top: 7px;
+    padding-top: 5px;
     font-size: 15px;
     text-align: start;
 
@@ -712,16 +757,17 @@ body {
 
 @media (max-width: 768px) {
     .popup {
-        width: 95%;
-        padding: 15px;
+        width: 90%;
+        padding: 12px;
     }
 
     .popup .popup-close {
-        font-size: 15px;
+        font-size: 12px;
         top: 5px;
         right: 10px;
     }
     .popup h3 {
+        margin-bottom: 3px;
         font-size: 15px;
     }
     .popup p{
@@ -736,15 +782,15 @@ body {
     }
 
     .popup .popup-close {
-        font-size: 15px;
-        top: 5px;
-        right: 5px;
+        font-size: 12px;
+        top: 2px;
+        right: 4px;
     }
     .popup h3 {
-        font-size: 12px;
+        font-size: 11px;
     }
     .popup p{
-        font-size: 10px;
+        font-size: 8px;
     }
 }
 
@@ -767,7 +813,7 @@ body {
 .produk-card1, .hiddenCards {
     background: #ffffff;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
@@ -851,6 +897,7 @@ body {
     .hiddenCards:nth-child(1) { grid-column: span 1; }
     .hiddenCards:nth-child(2) { grid-column: span 1; }
     .hiddenCards:nth-child(3) { grid-column: span 1; }
+    
 }
 
 
